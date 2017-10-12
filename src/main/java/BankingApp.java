@@ -59,8 +59,7 @@ public class BankingApp {
 
 				menuOptions();
 
-			}
-			if (choice == 3) {
+			} else if (choice == 3) {
 				System.out.println("You want to check your balance.");
 				System.out.println("Here are your accounts");
 				for (BankAccount current : myBank.accounts()) {
