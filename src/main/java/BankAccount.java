@@ -4,7 +4,7 @@ public class BankAccount {
 
 	private String type;
 	private double balance;
-	public String accountNum;
+	private String accountNum;
 
 	public BankAccount(String accountNum, String type, double balance) {
 		this.accountNum = accountNum;
