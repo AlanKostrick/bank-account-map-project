@@ -16,7 +16,7 @@ public class BankingApp {
 		myBank.add(account2);
 
 		System.out.println("Here are your accounts at our bank:");
-		for (BankAccount current : myBank.accounts()) {
+		for (BankAccount current : myBank.accountValues()) {
 			System.out.println(current.getType() + " " + current.getBalance());
 		}
 
@@ -26,7 +26,7 @@ public class BankingApp {
 			if (choice == 1) {
 				System.out.println("You want to deposit.");
 				System.out.println("Here are your accounts");
-				for (BankAccount current : myBank.accounts()) {
+				for (BankAccount current : myBank.accountValues()) {
 					System.out.println(
 							"(" + current.getAccoutNum() + ") " + current.getType() + " " + current.getBalance());
 				}
@@ -36,15 +36,15 @@ public class BankingApp {
 				System.out.println("You have selected " + accountNum);
 				System.out.println("Enter the amount to deposit:");
 				double amount = input.nextDouble();
-				myBank.getAccountNum(accountNum).deposit(amount);
-				System.out.println("Your updated balance is now " + myBank.getAccountNum(accountNum).getBalance());
+				myBank.getAccount(accountNum).deposit(amount);
+				System.out.println("Your updated balance is now " + myBank.getAccount(accountNum).getBalance());
 
 				menuOptions();
 
 			} else if (choice == 2) {
 				System.out.println("You want to withdrawl.");
 				System.out.println("Here are your accounts");
-				for (BankAccount current : myBank.accounts()) {
+				for (BankAccount current : myBank.accountValues()) {
 					System.out.println(
 							"(" + current.getAccoutNum() + ") " + current.getType() + " " + current.getBalance());
 				}
@@ -54,15 +54,15 @@ public class BankingApp {
 				System.out.println("You have selected " + accountNum);
 				System.out.println("Enter the amount to withdrawl:");
 				double amount = input.nextDouble();
-				myBank.getAccountNum(accountNum).withdrawal(amount);
-				System.out.println("Your updated balance is now " + myBank.getAccountNum(accountNum).getBalance());
+				myBank.getAccount(accountNum).withdrawal(amount);
+				System.out.println("Your updated balance is now " + myBank.getAccount(accountNum).getBalance());
 
 				menuOptions();
 
 			} else if (choice == 3) {
 				System.out.println("You want to check your balance.");
 				System.out.println("Here are your accounts");
-				for (BankAccount current : myBank.accounts()) {
+				for (BankAccount current : myBank.accountValues()) {
 					System.out.println(
 							"(" + current.getAccoutNum() + ") " + current.getType() + " " + current.getBalance());
 				}
@@ -70,7 +70,7 @@ public class BankingApp {
 				System.out.println("Select the account by (acct num) to perform this transaction.");
 				String accountNum = input.nextLine();
 				System.out.println("You have selected " + accountNum);
-				System.out.println("Your updated balance is now " + myBank.getAccountNum(accountNum).getBalance());
+				System.out.println("Your updated balance is now " + myBank.getAccount(accountNum).getBalance());
 
 				menuOptions();
 
@@ -78,7 +78,7 @@ public class BankingApp {
 
 				System.out.println("You would like to close an account.");
 				System.out.println("Here are your accounts");
-				for (BankAccount current : myBank.accounts()) {
+				for (BankAccount current : myBank.accountValues()) {
 					System.out.println(
 							"(" + current.getAccoutNum() + ") " + current.getType() + " " + current.getBalance());
 				}
@@ -90,7 +90,7 @@ public class BankingApp {
 				myBank.closeAccount(accountNum);
 				System.out.println("You are closing account # " + accountNum);
 				System.out.println("Here are your remaining accounts");
-				for (BankAccount current : myBank.accounts()) {
+				for (BankAccount current : myBank.accountValues()) {
 					System.out.println(
 							"(" + current.getAccoutNum() + ") " + current.getType() + " " + current.getBalance());
 				}

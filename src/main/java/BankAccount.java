@@ -4,7 +4,7 @@ public class BankAccount {
 
 	private String type;
 	private double balance;
-	private String accountNum;
+	private String accountNum; //unique key
 
 	public BankAccount(String accountNum, String type, double balance) {
 		this.accountNum = accountNum;
@@ -26,7 +26,6 @@ public class BankAccount {
 
 	public void deposit(double amount) {
 		balance += amount;
-		
 
 	}
 

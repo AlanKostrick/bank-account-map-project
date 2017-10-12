@@ -26,7 +26,7 @@ public class BankingTests {
 	public void assertThatAccountIsFound() {
 		Bank underTest = new Bank();
 		underTest.add(new BankAccount("1","type",0));
-		String check = underTest.getAccountNum("1").getAccoutNum();
+		String check = underTest.getAccount("1").getAccoutNum();
 		assertEquals ("1", check);
 	}
 	
@@ -34,7 +34,7 @@ public class BankingTests {
 	public void assertThatBalanceIsCorrect() {
 		Bank underTest = new Bank();
 		underTest.add(new BankAccount("1","type",0));
-		double check = underTest.getAccountNum("1").getBalance();
+		double check = underTest.getAccount("1").getBalance();
 		assertEquals (0, check,.01);
 	}
 

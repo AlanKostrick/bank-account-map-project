@@ -5,9 +5,9 @@ import java.util.Map;
 public class Bank {
 
 	// map needs 2 type params (1 for key and 1 for the value)
-	Map<String, BankAccount> accounts = new HashMap<String, BankAccount>();
+	private Map<String, BankAccount> accounts = new HashMap<String, BankAccount>();
 
-	public Collection<BankAccount> accounts() {
+	public Collection <BankAccount> accountValues() {
 		return accounts.values();
 	}
 
@@ -17,10 +17,9 @@ public class Bank {
 
 	public void add(BankAccount account) {
 		accounts.put(account.getAccoutNum(), account);
-
 	}
 
-	public BankAccount getAccountNum(String accountNum) {
+	public BankAccount getAccount(String accountNum) {
 		return accounts.get(accountNum);
 	}
 
